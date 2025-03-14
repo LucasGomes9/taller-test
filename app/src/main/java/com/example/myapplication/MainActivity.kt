@@ -28,40 +28,19 @@ class MainActivity : AppCompatActivity() {
         recylcerView.layoutManager = LinearLayoutManager(this)
 
 
-        val items = listOf(
-            ListItem("Item 1", "First Item"),
-            ListItem("Item 2", "Second Item"),
-            ListItem("Item 3", "Third Item"),
-            ListItem("Item 45152352", "Fourth Item"),
-            ListItem("Item 41312", "Fourth Item"),
-            ListItem("Item 45135235", "Fourth Item"),
-            ListItem("Item 4654645", "Fourth Item"),
-            ListItem("Item 41414", "Fourth Item"),
-            ListItem("Item 45432534", "Fourth Item"),
-            ListItem("Item 41431241", "Fourth Item"),
-            ListItem("Item 43245234513", "Fourth Item"),
-            ListItem("Item 44235321452", "Fourth Item"),
-            ListItem("Item 464356534", "Fourth Item"),
-            ListItem("Item 3424234", "Fourth Item"),
-            ListItem("Item 46565", "Fourth Item"),
-            ListItem("Item 412412412", "Fourth Item"),
-            ListItem("Item 4235235", "Fourth Item"),
-            ListItem("Item 4521352352", "Fourth Item"),
-            ListItem("Item 45465656", "Fourth Item"),
-            ListItem("Item 451251251", "Fourth Item"),
-            ListItem("Item 443124124", "Fourth Item"),
-            ListItem("Item 45125125", "Fourth Item"),
-            ListItem("Item 413412312", "Fourth Item"),
-            ListItem("Item 45436534634", "Fourth Item"),
-            ListItem("Item 4343423", "Fourth Item"),
-            ListItem("Item 46565", "Fourth Item"),
-            ListItem("Item 44151521", "Fourth Item"),
-            ListItem("Item 412312", "Fourth Item"),
-            ListItem("Item 434", "Fourth Item"),
-        )
+        val items = createList()
 
         recylcerView.adapter = ViewAdapter(this, items)
 
+    }
+
+    private fun  createList(): List<ListItem>{
+        val list = mutableListOf<ListItem>()
+        for (i in 1..100){
+            val item = ListItem("Item $i", "Description $i")
+            list.add(item)
+        }
+        return list
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
