@@ -35,12 +35,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun  createList(): List<ListItem>{
-        val list = mutableListOf<ListItem>()
-        for (i in 1..100){
-            val item = ListItem("Item $i", "Description $i")
-            list.add(item)
+        return (1..100).map { i ->
+            ListItem("Item $i", "Description $i")
         }
-        return list
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
